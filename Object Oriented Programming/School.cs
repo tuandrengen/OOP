@@ -14,5 +14,16 @@ namespace Object_Oriented_Programming
         {
             return $"{ schoolName }";
         }
+
+        public void SetName(string oldSchoolName, string newSchoolName)
+        {
+            this.schoolName = newSchoolName;
+            Console.WriteLine($"{oldSchoolName} has changed its name to '{ this.GetName()}'");
+        }
+
+        public void Save()
+        {
+            DataStorage.Store(this);
+        }
     }
 }

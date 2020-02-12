@@ -43,8 +43,12 @@ namespace Object_Oriented_Programming
             Console.WriteLine("{0} has {1} student(s) and {2} professor(s).", 
                 school1.schoolName, school1.schoolStudents, school1.schoolProfessors);
 
-            Console.Write($"{ school1.GetName() } " + "has {0} student(s) and {1} professor(s).", 
+            Console.WriteLine($"{ school1.GetName() } " + "has {0} student(s) and {1} professor(s).", 
                 school1.schoolStudents, school1.schoolProfessors);
+
+            school1.SetName(school1.schoolName,"UCN");
+
+            school1.Save();
         }
 
         static void populateSchoolWithStudents(School school)
