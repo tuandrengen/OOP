@@ -8,22 +8,19 @@ namespace Inheritance
     {
         public int bonus { get; set; }
 
-        public Manager(string name, string jobTitle, int seniorityLevel, int salary, int bonus) : base(name, jobTitle, seniorityLevel, salary)
+        public Manager(string name, string jobTitle, int salary, int bonus) : base(name, jobTitle, salary)
         {
-            this.name = name;
-            this.jobTitle = jobTitle;
-            this.salary = salary;
-            this.seniorityLevel = seniorityLevel;
             this.bonus = bonus;
         }
         public override void CalculateYearlySalary()
         {
-            Console.WriteLine(salary * 12 + bonus);
+            Console.WriteLine(salary * 12 * ((10 / seniorityLevel) + 1));
         }
 
         public override void CalculateYearlySalaryWithBonus()
         {
-            Console.WriteLine(salary * 12 + (salary * 12) / (seniorityLevel * 10) + bonus);
+            double salaryBonus = salary * 12 * ((10 / seniorityLevel) + 1) + bonus;
+            Console.WriteLine(salaryBonus);
         }
     }
 }
