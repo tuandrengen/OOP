@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Inheritance
 {
+    // Abstract methods resides in abstract classes and has no implementation
+    // Abstract methods MUST be overridden in non-abstract child classes.
     abstract class ParkingMeter
     {
         public int money;
@@ -14,14 +16,27 @@ namespace Inheritance
         {
             if (weekend)
             {
-                return calculateParkingRate(timeParked);
+                WeekendParkingRate ParkingRateWeekend = new WeekendParkingRate();
+                return ParkingRateWeekend.calculateParkingRate(timeParked);
             }
             else
             {
-                return calculateParkingRate(timeParked);
+                WeekdaysParkingRate ParkingRateWeekday = new WeekdaysParkingRate();
+                return ParkingRateWeekday.calculateParkingRate(timeParked);
             }
         }
         public abstract int calculateParkingRate(int timeParked);
+        public bool IsEnough(int money, int cost)
+        {
+            if (money >= cost)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
     class WeekendParkingRate : ParkingMeter
     {

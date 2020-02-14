@@ -89,12 +89,13 @@ namespace Inheritance
         {
             if (money < 0)
             {
-                throw new Exception("Cannot deposit a negative amout of money.");
+                Console.WriteLine("Cannot deposit negative amount of money");
             }
             else
             {
                 balance += money;
             }
+            return;
         }
 
         public void withdrawMoney(double money)
