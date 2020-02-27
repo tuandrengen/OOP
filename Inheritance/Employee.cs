@@ -20,7 +20,7 @@ namespace Inheritance
                 {
                     _seniorityLevel = 10;
                 }
-                else if (value < 1)
+                else if (value <= 1)
                 {
                     _seniorityLevel = 1;
                 }
@@ -29,35 +29,32 @@ namespace Inheritance
             }
         }
 
-        private int myVar;
-
-        public int MyProperty
-        {
-            get { return myVar; }
-            set { myVar = value; }
-        }
-
-        public Employee(int prop)
-        {
-            MyProperty = prop;
-            var ass = MyProperty;
-        }
-        public Employee(string name, string jobTitle, int salary)
+        public Employee(string name, string jobTitle, int salary) // Contructor
         {
             this.name = name;
             this.jobTitle = jobTitle;
             this.salary = salary;
+            seniorityLevel = 1;
         }
         // Virtual methods can reside in abstract and non-abstract classes
         // It is not necessary to override virtual methods in subclasses
         // Virtual methods must have an implementation, which CAN be overriden in the subclass
-        public virtual void CalculateYearlySalary()
+        public virtual void CalculateYearlySalary() // Virtual method
         {
             Console.WriteLine($"{name} gets " + salary * 12 + $" money every year as an {jobTitle}.");
         }
         public virtual void CalculateYearlySalaryWithBonus()
         {
-            double salaryBonus = salary * 12 * ((10/seniorityLevel)+1);
+            int salaryBonus;
+            if (seniorityLevel > 0)
+            {
+                salaryBonus = salary * 12 * ((10 / seniorityLevel) + 1);
+            }
+            else
+            {
+                salaryBonus = salary;
+            }
+
             Console.WriteLine(salaryBonus);
         }
     }

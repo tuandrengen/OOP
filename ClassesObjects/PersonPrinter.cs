@@ -13,7 +13,7 @@ namespace ClassesObjects
 
         public static void PrintTree(List<Person> familyList)
         {
-            foreach (Person member in familyList) // For hvert medlem i familyList, gør noget.
+            foreach (Person member in familyList)
             {
                 PrintPerson(member);
             }

@@ -15,10 +15,26 @@ namespace Inheritance
             //manager.CalculateYearlySalary();
             //manager.CalculateYearlySalaryWithBonus();
 
-            BankAccount bankAccount = new BankAccount(2000);
-            Console.WriteLine(bankAccount.balance);
-            bankAccount.depositMoney(-200);
-            Console.WriteLine(bankAccount.balance);
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter your job title: ");
+            string jobTitle = Console.ReadLine();
+
+            Console.Write("Enter your salary: ");
+            int salary = Int32.Parse(Console.ReadLine());
+
+            Employee employee = new Employee(name, jobTitle, salary);
+
+            Console.WriteLine(employee.name);
+            Console.WriteLine(employee.jobTitle);
+            employee.CalculateYearlySalary();
+            employee.CalculateYearlySalaryWithBonus();
+
+            //BankAccount bankAccount = new BankAccount(2000);
+            //Console.WriteLine(bankAccount.balance);
+            //bankAccount.depositMoney(-200);
+            //Console.WriteLine(bankAccount.balance);
 
             Console.ReadLine();
         }

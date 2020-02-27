@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Inheritance
 {
-    class Manager : Employee
+    class Manager : Employee // Sub class. Child of Employee class. Inherits from the Employee class.
     {
         public int bonus { get; set; }
 
@@ -12,11 +12,10 @@ namespace Inheritance
         {
             this.bonus = bonus;
         }
-        public override void CalculateYearlySalary()
+        public override void CalculateYearlySalary() // Overrides the virtual method from the Employee class.
         {
             Console.WriteLine(salary * 12 * ((10 / seniorityLevel) + 1));
         }
-
         public override void CalculateYearlySalaryWithBonus()
         {
             double salaryBonus = salary * 12 * ((10 / seniorityLevel) + 1) + bonus;

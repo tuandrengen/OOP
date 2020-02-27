@@ -6,6 +6,8 @@ namespace ClassesObjects
 {
     class Person
     {
+        // Fields and methods inside classes are often referred to as "Class members"
+        // Class members
         private string _firstName; // Field
         private string _surName;
         private int _age;
