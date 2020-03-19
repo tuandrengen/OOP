@@ -16,9 +16,9 @@ namespace Generics
             this.secondElement = secondElement;
         }
 
+        // Swaps the first and second elements
         public Pair<T1, T2> Swap()
         {
-            // Swaps the first and second elements
             object first = secondElement;
             object second = firstElement;
             return new Pair<T1, T2>((T1)first, (T2)second);
